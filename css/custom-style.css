@@ -1,0 +1,15 @@
+.head_nav{
+	background : #3F51B5 !important;
+}
+.head_nav a{
+	color: whitesmoke !important;
+}
+.sub_nav{
+	position: relative;
+	z-index: 980; 
+	margin: 0 auto; 
+	padding-right: 20px;
+}
+.clear{
+	clear: both;
+}

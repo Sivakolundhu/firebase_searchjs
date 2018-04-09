@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List with Firebase - Search Workaround</title>
+
+	<!-- jQuery Version v3.3.1 -->
+	<script src="js/jquery.min.js"></script>
+
+	<!-- UIKIT Version 3.0.0-beta.42 -->
+	<script src="js/uikit.min.js"></script>
+	<script src="js/uikit-icons.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/uikit.min.css">
+
+	<!-- Custom overrides for UIKit -->
+	<link rel="stylesheet" type="text/css" href="css/custom-style.css">
+
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	<script src="js/init-firebase.js"></script>
+	<script src="js/main-app.js"></script>
+</head>
+<body>
+	<nav class="uk-navbar-container uk-margin head_nav" uk-navbar>
+		<div class="uk-navbar-center">
+			<a class="uk-navbar-item uk-logo" href="#">ToDo! - Firebase SearchJS</a>
+		</div>
+	</nav>
+
+	<div class="uk-margin-bottom" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+		<nav class="uk-navbar-container uk-container-small sub_nav" uk-navbar>
+			<div class="uk-navbar-left">
+		  		<div class="uk-navbar-item">
+					<form class="uk-search uk-search-navbar" action="javascript:void(0)">
+					  <span uk-search-icon></span>
+					  <input class="uk-search-input SearchInput" type="search" placeholder="Search...">
+					</form>
+		  		</div>
+		  	</div>
+	  </nav>
+	</div>
+
+	<div class="uk-container uk-container-small uk-margin-xlarge-bottom">
+		<div>
+			<h3 class="uk-margin-remove uk-align-left">Tasks : <span class="taskCount">0</span></h3>
+			<a class="uk-button uk-margin-remove uk-align-right uk-button-default ModalTriggerButton" href="#TodoModal" uk-toggle>New Task</a>
+			<div class="clear"></div>
+		</div>
+		
+		<ul class="uk-list uk-list-striped TaskList">
+			<li>
+				<div uk-spinner></div> <span class="uk-margin-left">Loading Tasks...</span>
+			</li>
+		</ul>
+
+	</div>
+
+	<div id="TodoModal" uk-modal>
+		<div class="uk-modal-dialog">
+			<button class="uk-modal-close-default" type="button" uk-close></button>
+			<div class="uk-modal-header">
+				<h2 class="uk-modal-title">Add New Todo Task.</h2>
+			</div>
+			<div class="uk-modal-body">
+				<div class="uk-margin">
+		            <textarea class="uk-textarea TaskDesc" rows="5" placeholder="Task Description...."></textarea>
+		        </div>
+			</div>
+			<div class="uk-modal-footer uk-text-right">
+				<div uk-spinner class="uk-align-left uk-margin-remove AddTaskLoad" style="display: none;"></div>
+				<button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+				<button class="uk-button uk-button-primary AddNewtask" type="button">Add</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
