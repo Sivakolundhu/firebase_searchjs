@@ -1,6 +1,6 @@
-# Firebase_searchJS
+# Firebase_searchJS - Ver1.0
 
-A simple workaround for searching Firebase Database with jQuery
+A Simple workaround for searching Firebase Database with jQuery
 
 
 
